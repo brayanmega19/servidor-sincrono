@@ -1,9 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 
-// Create the server
+// Crear el servidor
 const server = http.createServer((request, response) => {
-    // Read file synchronously
+    // Aqui se lee bien perron el archivo, sincronicamente
     try {
         const data = fs.readFileSync('message.txt', 'utf8');
         response.writeHead(200, {'Content-Type': 'text/plain'});
@@ -15,7 +15,7 @@ const server = http.createServer((request, response) => {
     }
 });
 
-// Start listening on port 3021
+// Empieza a funcionar en el puerto 3021
 server.listen(3021, () => {
     console.log('Server is listening on port 3021');
 });
