@@ -13,7 +13,7 @@ application.get('/', (req, res) => {
   res.send('Hola mundo!');
 });
 
-app.listen(port, () => {
+application.listen(port, () => {
   console.log(`Servidor corriendo en: http://localhost:${port}`);
 });
 
