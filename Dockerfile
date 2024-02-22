@@ -1,22 +1,23 @@
-# Empezamos usando la imagen original de node
-FROM node:14
+# Use the official Node.js image as base
+FROM node:latest
 
-# colocamos el directorio dento del contenedor
+# Set the working directory inside the container
 WORKDIR /app
 
-# copiar los archivos package.json y package-lock.json
+# Copy package.json and package-lock.json (if available) to the working directory
 COPY package*.json ./
 
-# Instalar dependencias (no tenemos ni una, per bueno)
+# Install dependencies
 RUN npm install
 
-# agregamos el archivo server.js y el message.txt
-COPY server.js ./
-COPY message.txt ./
+# Copy the rest of the application code
+COPY . .
 
-# Exponer puerto 
+# Expose the necessary port
 EXPOSE 3022
+EXPOSE 3021
+EXPOSE 3025
 
-# comando usado para iniciar el servidor
+# Command to run the Node.js script
 CMD ["node", "server.js"]
 
