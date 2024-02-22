@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install express
 
 # Copy the rest of the application code
 COPY . .
@@ -20,4 +20,5 @@ EXPOSE 3025
 
 # Command to run the Node.js script
 CMD ["node", "server.js"]
+
 
