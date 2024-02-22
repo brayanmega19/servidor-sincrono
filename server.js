@@ -6,7 +6,7 @@ const http = require('http');
 const fs = require('fs');
 
 const express = require('express');
-const appliaction = express();
+const application = express();
 const port = 3022; // Aqui elegimos un puerto para la aplicacion
 
 application.get('/', (req, res) => {
