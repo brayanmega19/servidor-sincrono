@@ -53,9 +53,10 @@ server.listen(3021, () => {
 // Se crea la arrow function requestHandler
 const requestHandler = (request, response) => {
 
-  // Simulate an asynchronous operation with setTimeout
+  // Aqui se utiliza un setTimeout para simular la asincronicidad del servidor
   setTimeout(() => {
-    // Read a message from a file asynchronously to demonstrate server operation
+    // Se lee un mensaje asincronamente para demostrar el funcionamiento, 
+    //es decir que si se recibe bien la info, se manda el mensaje.
     fs.readFile('message.txt', 'utf8', (err, data) => {
       if (err) {
         response.writeHead(500, {'Content-Type': 'text/plain'});
